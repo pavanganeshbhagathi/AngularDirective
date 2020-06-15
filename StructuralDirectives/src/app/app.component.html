@@ -1,0 +1,59 @@
+<h1 [ngClass]="className">Changing Color using ngClass Directive</h1>
+<button (click)="change()">change Color</button>
+<br>
+<h2 [ngStyle]="styleName">Reset and its Color is changed by ngStyle</h2>
+<button (click)="reset()">Reset</button>
+
+<div>
+  <button type="button" (click)="changeData()">{{caption}}</button>
+  <h2 *ngIf="showInfo">Demonstration of Structural Directives-*ngIf</h2>
+</div>
+
+<h1>Demonstrate ngFor</h1>
+<ul>
+  <li *ngFor="let item of mobile">
+    {{item}}
+  </li>
+</ul>
+
+<h1>Demonstrate ngSwitch</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Srl No</th>
+      <th>Student Name</th>
+      <th>Course</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of studentList;" [ngSwitch]="student.Grade">
+      <td>
+        <span *ngSwitchCase=" 'A'" [ngStyle]="{'font-size':'18px','color':'red'}">{{student.SrlNo}}</span>
+        <span *ngSwitchCase=" 'B'" [ngStyle]="{'font-size':'16px','color':'blue'}">{{student.SrlNo}}</span>
+        <span *ngSwitchCase=" 'C'" [ngStyle]="{'font-size':'14px','color':'green'}">{{student.SrlNo}}</span>
+        <span *ngSwitchCase=" 'D'" [ngStyle]="{'font-size':'12px','color':'black'}">{{student.SrlNo}}</span>
+      </td>
+      <td class="tabledata">
+        <span *ngSwitchCase=" 'A'" [ngStyle]="{'font-size':'18px','color':'red'}">{{student.Name}}</span>
+        <span *ngSwitchCase=" 'B'" [ngStyle]="{'font-size':'16px','color':'blue'}">{{student.Name}}</span>
+        <span *ngSwitchCase=" 'C'" [ngStyle]="{'font-size':'14px','color':'green'}">{{student.Name}}</span>
+        <span *ngSwitchCase=" 'D'" [ngStyle]="{'font-size':'12px','color':'black'}">{{student.Name}}</span>
+      </td>
+      <td class="tabledata">
+        <span *ngSwitchCase=" 'A'" [ngStyle]="{'font-size':'18px','color':'red'}">{{student.Course}}</span>
+        <span *ngSwitchCase=" 'B'" [ngStyle]="{'font-size':'16px','color':'blue'}">{{student.Course}}</span>
+        <span *ngSwitchCase=" 'C'" [ngStyle]="{'font-size':'14px','color':'green'}">{{student.Course}}</span>
+        <span *ngSwitchCase=" 'D'" [ngStyle]="{'font-size':'12px','color':'black'}">{{student.Course}}</span>
+      </td>
+      <td class="tabledata">
+        <span *ngSwitchCase=" 'A'" [ngStyle]="{'font-size':'18px','color':'red'}">{{student.Grade}}</span>
+        <span *ngSwitchCase=" 'B'" [ngStyle]="{'font-size':'16px','color':'blue'}">{{student.Grade}}</span>
+        <span *ngSwitchCase=" 'C'" [ngStyle]="{'font-size':'14px','color':'green'}">{{student.Grade}}</span>
+        <span *ngSwitchCase=" 'D'" [ngStyle]="{'font-size':'12px','color':'black'}">{{student.Grade}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>
